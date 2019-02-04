@@ -10,6 +10,6 @@ public class PersonComparator implements Comparator<Person> {
         if(person1.getBirthdate() != person2.getBirthdate()){
             return -1;
         }
-        return 1;
+        return 0;
     }
 }

@@ -5,8 +5,8 @@ import java.util.Date;
 
 public class Citizen extends Person{
 
-    Nationality nationality;
-    String birthplace;
+    private Nationality nationality;
+    private String birthplace;
 
     public Citizen(){
     }
@@ -22,10 +22,10 @@ public class Citizen extends Person{
         this.birthplace = birthplace;
     }
 
-    public String greet(Nationality greeting){
+    public String greet(){
 
         StringBuilder message = new StringBuilder();
-        switch (greeting){
+        switch (this.nationality){
             case COSTA_RICAN:
                 message.append("Pura vida");
                 break;
@@ -42,11 +42,10 @@ public class Citizen extends Person{
         return message.toString();
     }
 
-    public String morningGreet(Nationality greeting){
+    public String morningGreet(){
 
         StringBuilder message = new StringBuilder();
-
-        switch (greeting){
+        switch (this.nationality){
             case COSTA_RICAN:
                 message.append("Buenos dias pura vida");
                 break;
@@ -61,7 +60,6 @@ public class Citizen extends Person{
                 break;
         }
         return message.toString();
-
     }
 
     public Nationality getNationality() {

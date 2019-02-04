@@ -1,5 +1,5 @@
 package hello;
 
 public enum Nationality {
-    COSTA_RICAN, CHINESE, GERMAN, MEXICAN
+    COSTA_RICAN, CHINESE, GERMAN, MEXICAN, GUATEMALA
 }
