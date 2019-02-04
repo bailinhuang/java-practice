@@ -42,7 +42,7 @@ public class GreetingController1 {
                 break;
         }
         Long index = counter.incrementAndGet();
-        int id = Integer.valueOf(index.intValue());
+        int id = index.intValue();
         Programmer programmer = new Programmer(name, new Date(), id , enumNationality, birthplace);
         programmerList.add(programmer);
         return programmer;
@@ -51,6 +51,12 @@ public class GreetingController1 {
     @RequestMapping("/greeting/programmer/{id}")
     public String getProgrammerGreeting(@PathVariable int id){
         return programmerList.get(id).greet();
+    }
+
+    @RequestMapping("/programmer/ETA/{id}")
+    public String getProgrammerGreeting(@PathVariable int id,
+                                        @RequestParam(value = "cups", defaultValue = "5") long cups){
+        return programmerList.get(id).getStoryETA(cups);
     }
 
 }
